@@ -5,3 +5,12 @@
   buttonLink="#overview"
 >
 </app-hero>
+
+<ng-container *ngFor="let faq of faq">
+  <app-accordion [title]="faq.frage">
+    <p>{{faq.antwort}}</p>
+     <app-button label="Primary" variant="primary"></app-button>
+     <app-button label="Secondary" variant="secondary"></app-button>
+     <app-button label="Danger" variant="danger"></app-button>
+    </app-accordion>
+</ng-container>

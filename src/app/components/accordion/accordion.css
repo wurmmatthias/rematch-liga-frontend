@@ -1,0 +1,46 @@
+.accordion {
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  font-family: 'Poppins', sans-serif;
+  margin: 1rem auto;
+  width: 100%;
+  max-width: 1200px;
+  overflow: hidden;
+}
+
+/* Gradient header that spans full width */
+.accordion-header {
+  background: linear-gradient(135deg, #19e3b4, #12a534); /* same as hero */
+  width: 100%;
+  border: none;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1f2937;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+/* Optional: light hover effect on top of gradient */
+.accordion-header:hover {
+  filter: brightness(1.05);
+}
+
+.arrow {
+  transition: transform 0.3s ease;
+}
+
+.arrow.rotate {
+  transform: rotate(180deg);
+}
+
+.accordion-body {
+  padding: 1.25rem 1.5rem;
+  color: #4b5563;
+  background: white;
+  font-size: 0.95rem;
+}

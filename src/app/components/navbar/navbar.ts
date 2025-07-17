@@ -1,24 +1,27 @@
-import { Component } from '@angular/core';
+import { Component, inject  } from '@angular/core';
 import { Loginmodal } from '../loginmodal/loginmodal';
 import { Router } from '@angular/router';
 import { RouterModule } from '@angular/router';
-import { NgIf } from '@angular/common';
+import { NgIf, AsyncPipe  } from '@angular/common';
 import { Button } from '../button/button';
 import { AuthService } from '../../services/auth';
 
 @Component({
   selector: 'app-navbar',
-  imports: [RouterModule, Loginmodal, Button, NgIf],
+  imports: [RouterModule, Loginmodal, Button, NgIf, AsyncPipe],
   templateUrl: './navbar.html',
   styleUrl: './navbar.css'
 })
 export class Navbar {
+  auth = inject(AuthService);
+  router = inject(Router);
   isMobileMenuOpen = false;
   showLoginModal = false;
-  loggedIn = false;
+  isLoggedIn$ = this.auth.isLoggedIn$;
 
-  constructor(public auth: AuthService, private router: Router) {
-    this.auth.isLoggedIn$.subscribe(state => this.loggedIn = state);
+  constructor(public authService: AuthService, private routerInstance: Router) {
+    // ✅ Keep in sync with auth state
+    this.authService.isLoggedIn$.subscribe(state => this.isLoggedIn$ = state);
   }
 
   toggleMobileMenu() {

@@ -100,4 +100,15 @@
   .burger {
     display: flex;
   }
+
+  .navbar {
+  background: linear-gradient(
+    90deg,
+    #19e3b4 0%,       /* Black (left edge) */
+    #12a534 45%,      /* Red */
+    #1a1f5a 60%,      /* Gold */
+    rgba(29, 34, 47, 0.95) 65%, /* Transition to your base color */
+    rgba(29, 34, 47, 0.95) 100%
+  );
+}
 }

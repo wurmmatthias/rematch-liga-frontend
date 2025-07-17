@@ -7,13 +7,15 @@
       <li><a routerLink="/">Startseite</a></li>
       <li><a routerLink="/faqs">FAQ's</a></li>
       <li><a routerLink="/">Matches</a></li>
-        <li *ngIf="!loggedIn">
-          <app-button label="Spieler Login" variant="primary" (click)="toggleLoginModal()"></app-button>
-        </li>
-
-        <li *ngIf="loggedIn">
+        <li *ngIf="isLoggedIn$">
           <app-button label="Dashboard" variant="primary" routerLink="/dashboard"></app-button>
         </li>
+        <li *ngIf="isLoggedIn$ | async; else loginBtn">
+          <app-button label="Abmelden" variant="danger" (click)="logout()"></app-button>
+        </li>
+        <ng-template #loginBtn>
+          <app-button label="Spieler Login" variant="primary" (click)="toggleLoginModal()"></app-button>
+        </ng-template>
     </ul>
 
     <div class="burger" (click)="toggleMobileMenu()">

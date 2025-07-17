@@ -34,7 +34,7 @@ async login(username: string, password: string): Promise<boolean> {
 }
 
   logout() {
-    this.token = null;
+    localStorage.removeItem('token');
     this.loggedIn.next(false);
   }
 

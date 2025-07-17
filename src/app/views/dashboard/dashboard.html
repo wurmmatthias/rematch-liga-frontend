@@ -1,1 +1,32 @@
-<p>dashboard works!</p>
+<section class="dashboard-wrapper" *ngIf="user">
+  <div class="dashboard-header">
+    <h1>👋 Willkommen, {{ user.firstName }} {{ user.lastName }}</h1>
+    <p>Du bist jetzt im Esports League Dashboard.</p>
+  </div>
+
+  <div class="card-grid">
+    <div class="card profile-card">
+      <img [src]="user.image" alt="Avatar" />
+      <div class="profile-details">
+        <h3>{{ user.username }}</h3>
+        <p>{{ user.email }}</p>
+        <p>{{ user.gender | titlecase }}</p>
+      </div>
+    </div>
+
+    <div class="card stat-card">
+      <h4>Teams</h4>
+      <p>4 registriert</p>
+    </div>
+
+    <div class="card stat-card">
+      <h4>Letztes Spiel</h4>
+      <p>21. Juli 2025</p>
+    </div>
+
+    <div class="card stat-card">
+      <h4>Nächste Runde</h4>
+      <p>28. Juli 2025</p>
+    </div>
+  </div>
+</section>

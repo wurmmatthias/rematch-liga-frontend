@@ -1,0 +1,16 @@
+<div class="match-container">
+  <div class="team">
+    <img [src]="teamALogo" alt="{{ teamAName }} logo" />
+    <span class="team-name">{{ teamAName }}</span>
+  </div>
+
+  <div class="vs">
+    VS.
+    <div *ngIf="date" class="match-date">{{ date }}</div>
+  </div>
+
+  <div class="team reversed">
+    <span class="team-name">{{ teamBName }}</span>
+    <img [src]="teamBLogo" alt="{{ teamBName }} logo" />
+  </div>
+</div>

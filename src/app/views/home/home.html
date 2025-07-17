@@ -6,4 +6,13 @@
 >
 </app-hero>
 
+<app-upcoming-matches
+  *ngFor="let match of upcomingMatches"
+  [teamAName]="match.teamAName"
+  [teamBName]="match.teamBName"
+  [teamALogo]="match.teamALogo"
+  [teamBLogo]="match.teamBLogo"
+  [date]="match.date">
+</app-upcoming-matches>
+
 <app-match-table [matches]="matches"></app-match-table>

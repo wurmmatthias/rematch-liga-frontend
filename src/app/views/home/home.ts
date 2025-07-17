@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 import { Hero } from '../../components/hero/hero';
 import { MatchTable } from '../../components/match-table/match-table';
+import { UpcomingMatches } from '../../components/upcoming-matches/upcoming-matches';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-home',
-  imports: [Hero, MatchTable],
+  imports: [Hero, MatchTable, UpcomingMatches, CommonModule],
   templateUrl: './home.html',
   styleUrl: './home.css'
 })
@@ -72,4 +74,20 @@ matches = [
   }
 ];
 
+upcomingMatches = [
+  {
+    teamAName: 'Cyber Wolves',
+    teamBName: 'Skyburners',
+    teamALogo: 'https://picsum.photos/seed/abcdef/64/64',
+    teamBLogo: 'https://picsum.photos/64/64',
+    date: 'July 21 – 20:00 CET'
+  },
+  {
+    teamAName: 'Cyber Wolves',
+    teamBName: 'Skyburners',
+    teamALogo: 'https://picsum.photos/64/64',
+    teamBLogo: 'https://picsum.photos/64/64',
+    date: 'July 22 – 23:00 CET'
+  },
+];
 }

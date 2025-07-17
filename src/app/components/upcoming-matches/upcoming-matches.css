@@ -1,0 +1,50 @@
+.match-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  background: rgba(29, 34, 47, 0.95);
+  border-radius: 1rem;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  font-family: 'Poppins', sans-serif;
+  max-width: 800px;
+  margin: 1rem auto;
+}
+
+.team {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.team.reversed {
+  flex-direction: row-reverse;
+}
+
+.team img {
+  width: 48px;
+  height: 48px;
+  border-radius: 9999px;
+  object-fit: cover;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.team-name {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #fff;
+}
+
+.vs {
+  font-weight: 700;
+  font-size: 1.6rem;
+  color: #07e27c;
+  text-align: center;
+}
+
+.match-date {
+  font-size: 0.85rem;
+  color: #fff;
+  margin-top: 0.25rem;
+}

@@ -9,11 +9,12 @@
     <div class="modal-form">
       <h2>Willkommen zurück</h2>
       <p>Bitte melden Sie sich an um fortzufahren.</p>
-      <form>
-        <input type="text" placeholder="Benutzername" />
-        <input type="password" placeholder="Passwort" />
+        <form (submit)="onSubmit($event)">
+        <input type="text" [(ngModel)]="username" name="username" placeholder="Benutzername" required />
+        <input type="password" [(ngModel)]="password" name="password" placeholder="Passwort" required />
         <button type="submit">Anmelden</button>
-      </form>
+        <div class="error" *ngIf="error">{{ error }}</div>
+        </form>
       <button class="close-btn" (click)="closeModal()">✕</button>
     </div>
   </div>

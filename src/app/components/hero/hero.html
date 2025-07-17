@@ -1,0 +1,13 @@
+<div
+  class="hero-container"
+  [ngStyle]="{
+    'background-image': backgroundImage ? 'url(' + backgroundImage + ')' : '',
+    'background-size': 'cover',
+    'background-position': 'center',
+    'background-repeat': 'no-repeat'
+  }"
+>
+  <div class="overlay">
+    <ng-content></ng-content>
+  </div>
+</div>

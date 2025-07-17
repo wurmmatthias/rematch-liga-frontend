@@ -1,16 +1,25 @@
 .navbar {
-  background: linear-gradient(135deg, rgba(252, 211, 77, 0.8), rgba(248, 113, 113, 0.8));
+  background: linear-gradient(
+    90deg,
+    #000000 0%,       /* Black (left edge) */
+    #dd0000 10%,      /* Red */
+    #ffcc00 20%,      /* Gold */
+    rgba(29, 34, 47, 0.95) 35%, /* Transition to your base color */
+    rgba(29, 34, 47, 0.95) 100%
+  );
   backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px); /* for Safari */
+  -webkit-backdrop-filter: blur(10px); /* Safari */
   color: white;
   padding: 1rem 2rem;
   position: sticky;
   top: 0;
   z-index: 1000;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transition: background 0.3s ease;
   font-family: 'Poppins', sans-serif;
 }
+
+
 
 .container {
   display: flex;
@@ -27,12 +36,12 @@
 .nav-links a {
   color: white;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: bold;
   transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
-  color: #1f2937; /* darker text hover contrast */
+  color: #51ef79;
 }
 
 .nav-links {

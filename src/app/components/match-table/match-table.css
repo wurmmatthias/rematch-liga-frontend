@@ -1,0 +1,39 @@
+.table-wrapper {
+  max-width: 1500px;
+  margin: 2rem auto;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+  font-family: 'Poppins', sans-serif;
+}
+
+.match-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+}
+
+.match-table thead {
+  background: linear-gradient(135deg, #19e3b4, #12a534);
+  color: #1f2937;
+}
+
+.match-table th, .match-table td {
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+.match-table tbody tr:nth-child(odd) {
+  background-color: #f9fafb;
+}
+
+.match-table tbody tr:hover {
+  background-color: #f3f4f6;
+  transition: background-color 0.3s ease;
+}
+
+.score {
+  font-weight: 600;
+  color: #1f2937;
+}

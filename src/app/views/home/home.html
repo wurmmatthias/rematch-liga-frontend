@@ -1,5 +1,9 @@
-<app-hero>
-  <h1>Welcome to Envision</h1>
-  <p>Your digital future starts here.</p>
-  <button class="cta">Get Started</button>
+<app-hero
+  title="Willkommen zur ersten deutschen Rematch Liga"
+  subtitle="Dies ist eine Beispiel Herosection."
+  buttonText="Kommende Matches ansehen"
+  buttonLink="#overview"
+>
 </app-hero>
+
+<app-match-table [matches]="matches"></app-match-table>

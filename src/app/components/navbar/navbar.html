@@ -5,9 +5,9 @@
     </div>
     <ul class="nav-links desktop-only">
       <li><a routerLink="/">Startseite</a></li>
-      <li><a routerLink="/about">FAQ's</a></li>
-      <li><a routerLink="/components">Matches</a></li>
-      <li><app-button label="Anmelden" (click)="toggleLoginModal()" variant="primary"></app-button></li>
+      <li><a routerLink="/faqs">FAQ's</a></li>
+      <li><a routerLink="/">Matches</a></li>
+      <li><app-button label="Spieler Login" (click)="toggleLoginModal()" variant="primary"></app-button></li>
     </ul>
 
     <div class="burger" (click)="toggleMobileMenu()">
@@ -19,8 +19,8 @@
 
   <ul class="mobile-menu" *ngIf="isMobileMenuOpen">
     <li><a routerLink="/" (click)="toggleMobileMenu()">Start</a></li>
-    <li><a routerLink="/about" (click)="toggleMobileMenu()">About</a></li>
-    <li><a routerLink="/components" (click)="toggleMobileMenu()">Components</a></li>
+    <li><a routerLink="/faqs" (click)="toggleMobileMenu()">About</a></li>
+    <li><a routerLink="/" (click)="toggleMobileMenu()">Components</a></li>
   </ul>
 </nav>
 <app-loginmodal [visible]="showLogin" (close)="toggleLoginModal()"></app-loginmodal>

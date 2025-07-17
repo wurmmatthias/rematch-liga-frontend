@@ -1,1 +1,20 @@
-<p>loginmodal works!</p>
+<div class="modal-backdrop" *ngIf="visible" (click)="closeModal()"></div>
+
+<div class="modal-container" *ngIf="visible">
+  <div class="modal-content">
+    <div class="modal-image">
+      <img src="../../assets/img/login-modal-bg.png" alt="Login visual" />
+    </div>
+
+    <div class="modal-form">
+      <h2>Willkommen zurück</h2>
+      <p>Bitte melden Sie sich an um fortzufahren.</p>
+      <form>
+        <input type="text" placeholder="Benutzername" />
+        <input type="password" placeholder="Passwort" />
+        <button type="submit">Anmelden</button>
+      </form>
+      <button class="close-btn" (click)="closeModal()">✕</button>
+    </div>
+  </div>
+</div>

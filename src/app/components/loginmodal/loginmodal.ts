@@ -3,7 +3,7 @@ import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-loginmodal',
-  imports: [],
+  imports: [NgIf],
   templateUrl: './loginmodal.html',
   styleUrl: './loginmodal.css'
 })

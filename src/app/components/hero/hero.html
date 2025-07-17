@@ -1,13 +1,14 @@
-<div
-  class="hero-container"
-  [ngStyle]="{
-    'background-image': backgroundImage ? 'url(' + backgroundImage + ')' : '',
-    'background-size': 'cover',
-    'background-position': 'center',
-    'background-repeat': 'no-repeat'
-  }"
->
-  <div class="overlay">
-    <ng-content></ng-content>
-  </div>
-</div>
+<section class="hero">
+  <ng-container *ngIf="title || subtitle">
+    <h1 *ngIf="title">{{ title }}</h1>
+    <p *ngIf="subtitle">{{ subtitle }}</p>
+  </ng-container>
+
+  <ng-content></ng-content>
+
+  <a *ngIf="buttonText && buttonLink"
+     [href]="buttonLink"
+     class="cta-button">
+    {{ buttonText }}
+  </a>
+</section>

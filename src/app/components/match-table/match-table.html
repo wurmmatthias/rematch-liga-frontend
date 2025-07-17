@@ -1,0 +1,25 @@
+<div class="table-wrapper">
+  <table class="match-table">
+    <thead>
+      <tr>
+        <th>Datum</th>
+        <th>Status</th>
+        <th>Team A</th>
+        <th>Ergebnis</th>
+        <th>Team B</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let match of matches">
+        <td>{{ match.date }}</td>
+        <td>{{ match.stage || 'Group' }}</td>
+        <td>{{ match.teamA }}</td>
+        <td>
+          <span class="score">{{ match.scoreA }}</span> :
+          <span class="score">{{ match.scoreB }}</span>
+        </td>
+        <td>{{ match.teamB }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

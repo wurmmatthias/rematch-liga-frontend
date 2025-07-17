@@ -10,13 +10,14 @@
   top: 50%; left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1000;
-  max-width: 800px;
+  max-width: 1000px;
   width: 90%;
   border-radius: 1rem;
   overflow: hidden;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
   animation: fadeIn 0.3s ease-out;
   font-family: 'Poppins', sans-serif;
+  border: 5px solid #19e3b4;
 }
 
 .modal-content {
@@ -64,8 +65,8 @@
 }
 
 .modal-form button[type="submit"] {
-  background: linear-gradient(135deg, #fcd34d, #f87171);
-  color: #1f2937;
+  background: linear-gradient(135deg, #12a534, #19e3b4);
+  color: #fff;
   padding: 0.95rem 1.5rem;
   border: none;
   font-weight: 600;

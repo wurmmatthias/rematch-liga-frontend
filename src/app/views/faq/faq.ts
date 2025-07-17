@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { Hero } from '../../components/hero/hero';
 
 @Component({
   selector: 'app-faq',
-  imports: [],
+  imports: [Hero],
   templateUrl: './faq.html',
   styleUrl: './faq.css'
 })

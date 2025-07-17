@@ -1,13 +1,15 @@
 import { Component, Input } from '@angular/core';
-import { NgStyle } from '@angular/common';
+import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-hero',
-  imports: [NgStyle],
+  imports: [NgIf],
   templateUrl: './hero.html',
   styleUrl: './hero.css'
 })
 export class Hero {
-  @Input() backgroundImage: string | null = null;
-
+  @Input() title: string = '';
+  @Input() subtitle: string = '';
+  @Input() buttonText?: string;
+  @Input() buttonLink?: string;
 }

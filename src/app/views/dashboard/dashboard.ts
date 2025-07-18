@@ -1,10 +1,11 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AuthService } from '../../services/auth';
+import { Hero } from '../../components/hero/hero';
 
 @Component({
   selector: 'app-dashboard',
-  imports: [CommonModule],
+  imports: [CommonModule, Hero],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.css'
 })

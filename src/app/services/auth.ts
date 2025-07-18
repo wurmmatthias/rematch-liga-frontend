@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { ToastService } from './toast';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
@@ -7,6 +8,9 @@ export class AuthService {
   private loggedIn = new BehaviorSubject<boolean>(false);
 
   isLoggedIn$ = this.loggedIn.asObservable();
+
+  constructor(private toast: ToastService) {}
+
 
 async login(username: string, password: string): Promise<boolean> {
   try {
@@ -23,6 +27,7 @@ async login(username: string, password: string): Promise<boolean> {
     if (data.accessToken) {
       this.token = data.accessToken;
       this.loggedIn.next(true);
+      this.toast.success('Erfolgreich eingeloggt!');
       return true;
     }
 
@@ -36,6 +41,7 @@ async login(username: string, password: string): Promise<boolean> {
   logout() {
     localStorage.removeItem('token');
     this.loggedIn.next(false);
+    this.toast.success("Du wurdest abgemeldet!");
   }
 
   getToken() {

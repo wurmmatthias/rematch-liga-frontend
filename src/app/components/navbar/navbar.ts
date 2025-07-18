@@ -5,6 +5,8 @@ import { RouterModule } from '@angular/router';
 import { NgIf, AsyncPipe  } from '@angular/common';
 import { Button } from '../button/button';
 import { AuthService } from '../../services/auth';
+import { of } from 'rxjs';
+
 
 @Component({
   selector: 'app-navbar',
@@ -21,7 +23,7 @@ export class Navbar {
 
   constructor(public authService: AuthService, private routerInstance: Router) {
     // ✅ Keep in sync with auth state
-    this.authService.isLoggedIn$.subscribe(state => this.isLoggedIn$ = state);
+    //this.authService.isLoggedIn$.subscribe(state => this.isLoggedIn$ = state);
   }
 
   toggleMobileMenu() {

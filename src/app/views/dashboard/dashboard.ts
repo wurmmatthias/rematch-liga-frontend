@@ -2,16 +2,25 @@ import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AuthService } from '../../services/auth';
 import { Hero } from '../../components/hero/hero';
+import { TwitchPlayer } from '../../components/twitch-player/twitch-player';
+import { Button } from "../../components/button/button";
 
 @Component({
   selector: 'app-dashboard',
-  imports: [CommonModule, Hero],
+  imports: [CommonModule, Hero, TwitchPlayer, Button],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.css'
 })
 export class Dashboard implements OnInit {
   user: any = null;
   private auth = inject(AuthService);
+
+  dummyStreams: string[] = ['papaplatte', 'bastighg', 'shroud'];
+  selectedChannel: string = this.dummyStreams[0];
+
+  setChannel(channel: string) {
+    this.selectedChannel = channel;
+  }
 
   async ngOnInit() {
     const token = this.auth.getToken();

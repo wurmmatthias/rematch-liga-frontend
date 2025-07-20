@@ -1,0 +1,46 @@
+.match-background {
+  position: fixed;
+  inset: 0; /* top: 0; right: 0; bottom: 0; left: 0 */
+  background-image: url('/assets/img/bg_match.jpg');
+  background-size: cover;
+  background-position: center;
+  overflow: auto;  /* scroll only here */
+  z-index: 0;
+  color: white;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.overlay {
+  background: linear-gradient(to bottom right, rgba(10,10,30,0.95), rgba(20,20,40,0.95));
+  min-height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  padding: 60px 20px;
+}
+
+.content-wrapper {
+  max-width: 1200px;
+  width: 100%;
+  padding: 40px;
+  background: rgba(0,0,0,0.4);
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(0,0,0,0.3);
+}
+
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 10px black;
+}
+
+p {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+}
+
+body {
+  margin: 0;
+  overflow: hidden; /* prevent background scroll */
+}

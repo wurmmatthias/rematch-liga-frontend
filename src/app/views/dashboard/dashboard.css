@@ -72,3 +72,7 @@
   font-weight: 600;
   color: #f87171;
 }
+
+.twitch-stream {
+  max-width: 1200px;
+}

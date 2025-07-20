@@ -6,7 +6,7 @@
     <ul class="nav-links desktop-only">
       <li><a routerLink="/">Startseite</a></li>
       <li><a routerLink="/faqs">FAQ's</a></li>
-      <li><a routerLink="/">Matches</a></li>
+      <li><a routerLink="/matches">Matches</a></li>
         <li *ngIf="isLoggedIn$ | async; else dashbtn">
           <app-button label="Dashboard" variant="primary" routerLink="/dashboard"></app-button>
         </li>
@@ -30,7 +30,7 @@
   <ul class="mobile-menu" *ngIf="isMobileMenuOpen">
     <li><a routerLink="/" (click)="toggleMobileMenu()">Start</a></li>
     <li><a routerLink="/faqs" (click)="toggleMobileMenu()">About</a></li>
-    <li><a routerLink="/" (click)="toggleMobileMenu()">Components</a></li>
+    <li><a routerLink="/matches" (click)="toggleMobileMenu()">Components</a></li>
   </ul>
 </nav>
 <app-loginmodal [visible]="showLoginModal" (close)="toggleLoginModal()"></app-loginmodal>

@@ -3,10 +3,11 @@ import { Hero } from '../../components/hero/hero';
 import { MatchTable } from '../../components/match-table/match-table';
 import { UpcomingMatches } from '../../components/upcoming-matches/upcoming-matches';
 import { CommonModule } from '@angular/common';
+import { MatchPlanner } from '../../components/match-planner/match-planner';
 
 @Component({
   selector: 'app-home',
-  imports: [Hero, MatchTable, UpcomingMatches, CommonModule],
+  imports: [Hero, MatchTable, UpcomingMatches, CommonModule, MatchPlanner],
   templateUrl: './home.html',
   styleUrl: './home.css'
 })

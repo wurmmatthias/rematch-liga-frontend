@@ -89,28 +89,17 @@ export class MatchPlanner implements AfterViewInit {
     this.drawField();
 
     for (const arrow of this.arrows) {
+      this.drawArrow(arrow.from, arrow.to);
+    }
+
+    if (this.selectedTool === 'arrow' && this.currentArrow) {
       this.ctx.beginPath();
-      this.ctx.moveTo(arrow.from.x, arrow.from.y);
-      this.ctx.lineTo(arrow.to.x, arrow.to.y);
+      this.ctx.arc(this.currentArrow.x, this.currentArrow.y, 8, 0, 2 * Math.PI);
       this.ctx.strokeStyle = 'yellow';
       this.ctx.lineWidth = 2;
+      this.ctx.setLineDash([5, 3]);
       this.ctx.stroke();
-
-      const angle = Math.atan2(arrow.to.y - arrow.from.y, arrow.to.x - arrow.from.x);
-      const headLength = 10;
-      this.ctx.beginPath();
-      this.ctx.moveTo(arrow.to.x, arrow.to.y);
-      this.ctx.lineTo(
-        arrow.to.x - headLength * Math.cos(angle - Math.PI / 6),
-        arrow.to.y - headLength * Math.sin(angle - Math.PI / 6)
-      );
-      this.ctx.lineTo(
-        arrow.to.x - headLength * Math.cos(angle + Math.PI / 6),
-        arrow.to.y - headLength * Math.sin(angle + Math.PI / 6)
-      );
-      this.ctx.lineTo(arrow.to.x, arrow.to.y);
-      this.ctx.fillStyle = 'yellow';
-      this.ctx.fill();
+      this.ctx.setLineDash([]);
     }
 
     for (const player of this.players) {
@@ -121,16 +110,41 @@ export class MatchPlanner implements AfterViewInit {
 
       this.ctx.beginPath();
       this.ctx.strokeStyle = '#fff';
-      this.ctx.lineWidth = 3;
+      this.ctx.lineWidth = 2;
       this.ctx.arc(player.x, player.y, 16, 0, 2 * Math.PI);
       this.ctx.stroke();
 
       this.ctx.fillStyle = 'white';
-      this.ctx.font = '13px Arial';
+      this.ctx.font = '12px Arial';
       this.ctx.textAlign = 'center';
       this.ctx.textBaseline = 'middle';
       this.ctx.fillText(player.name, player.x, player.y);
     }
+  }
+
+  drawArrow(from: { x: number; y: number }, to: { x: number; y: number }) {
+    this.ctx.beginPath();
+    this.ctx.moveTo(from.x, from.y);
+    this.ctx.lineTo(to.x, to.y);
+    this.ctx.strokeStyle = 'yellow';
+    this.ctx.lineWidth = 2;
+    this.ctx.stroke();
+
+    const angle = Math.atan2(to.y - from.y, to.x - from.x);
+    const headLength = 10;
+    this.ctx.beginPath();
+    this.ctx.moveTo(to.x, to.y);
+    this.ctx.lineTo(
+      to.x - headLength * Math.cos(angle - Math.PI / 6),
+      to.y - headLength * Math.sin(angle - Math.PI / 6)
+    );
+    this.ctx.lineTo(
+      to.x - headLength * Math.cos(angle + Math.PI / 6),
+      to.y - headLength * Math.sin(angle + Math.PI / 6)
+    );
+    this.ctx.lineTo(to.x, to.y);
+    this.ctx.fillStyle = 'yellow';
+    this.ctx.fill();
   }
 
   setTool(tool: 'player' | 'arrow') {

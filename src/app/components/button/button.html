@@ -1,3 +1,4 @@
 <button [type]="type" [ngClass]="variant" class="btn">
+  <fa-icon *ngIf="icon" [icon]="icon!"></fa-icon>
   {{ label }}
 </button>

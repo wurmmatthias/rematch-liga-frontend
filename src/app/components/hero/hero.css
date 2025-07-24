@@ -1,10 +1,32 @@
 .hero {
+  position: relative;
   background: linear-gradient(135deg, #242555, #43d661);
-  color: #ffffff;
+  color: #fff;
   padding: 5rem 2rem;
   text-align: center;
   font-family: 'Poppins', sans-serif;
+  overflow: hidden;
 }
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--hero-bg-image) no-repeat center/cover;
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: 0;
+}
+
+.hero.has-bg::before {
+  opacity: 0.3;
+}
+
+.hero > * {
+  position: relative;
+  z-index: 1;
+}
+
 
 .hero h1 {
   font-size: 3rem;

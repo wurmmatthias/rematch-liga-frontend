@@ -7,6 +7,14 @@
 >
 </app-hero>
 
+<section class="twitch-stream">
+  <div class="home-header">
+    <h1>Live auf Twitch</h1>
+    <p>Lorem ipsum dolor sit amet.</p>
+  </div>
+  <app-twitch-player channel="rematchde"></app-twitch-player>
+</section>
+
 <app-upcoming-matches
   *ngFor="let match of upcomingMatches"
   [teamAName]="match.teamAName"

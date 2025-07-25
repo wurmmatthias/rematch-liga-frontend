@@ -4,10 +4,11 @@ import { MatchTable } from '../../components/match-table/match-table';
 import { UpcomingMatches } from '../../components/upcoming-matches/upcoming-matches';
 import { CommonModule } from '@angular/common';
 import { MatchPlanner } from '../../components/match-planner/match-planner';
+import { TwitchPlayer } from '../../components/twitch-player/twitch-player';
 
 @Component({
   selector: 'app-home',
-  imports: [Hero, MatchTable, UpcomingMatches, CommonModule, MatchPlanner],
+  imports: [Hero, MatchTable, UpcomingMatches, CommonModule, MatchPlanner, TwitchPlayer],
   templateUrl: './home.html',
   styleUrl: './home.css'
 })

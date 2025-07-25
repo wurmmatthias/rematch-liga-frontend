@@ -6,11 +6,12 @@ import { NgIf, AsyncPipe  } from '@angular/common';
 import { Button } from '../button/button';
 import { AuthService } from '../../services/auth';
 import { of } from 'rxjs';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 @Component({
   selector: 'app-navbar',
-  imports: [RouterModule, Loginmodal, Button, NgIf, AsyncPipe],
+  imports: [RouterModule, Loginmodal, Button, NgIf, AsyncPipe, FontAwesomeModule],
   templateUrl: './navbar.html',
   styleUrl: './navbar.css'
 })

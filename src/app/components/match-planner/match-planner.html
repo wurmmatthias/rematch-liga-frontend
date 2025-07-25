@@ -1,0 +1,12 @@
+<div class="planner-controls">
+  <button (click)="setTool('player');setTeam('red')">🔴 Team A</button>
+  <button (click)="setTool('player');setTeam('blue')">🔵 Team B</button>
+  <button (click)="setTool('arrow')">➡️ Pfeile</button>
+  <button (click)="undo()">↩️</button>
+  <button (click)="reset()">♻️</button>
+  <button (click)="exportImage()">📸 Exportieren</button>
+</div>
+
+<div class="planner-container">
+  <canvas #canvas (click)="onClick($event)"></canvas>
+</div>

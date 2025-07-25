@@ -3,6 +3,8 @@ import { RouterOutlet } from '@angular/router';
 import { Navbar } from './components/navbar/navbar';
 import { Footer } from './components/footer/footer';
 import { Toast } from './components/toast/toast';
+import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
+import { faSteam } from '@fortawesome/free-brands-svg-icons';
 
 @Component({
   selector: 'app-root',

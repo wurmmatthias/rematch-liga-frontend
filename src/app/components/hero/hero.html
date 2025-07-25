@@ -1,4 +1,12 @@
-<section class="hero">
+<section
+  class="hero"
+  [ngClass]="{ 'has-bg': backgroundImage }"
+  [ngStyle]="{
+    '--hero-bg-image': backgroundImage
+      ? 'url(' + backgroundImage + ')'
+      : 'none'
+  }"
+>
   <ng-container *ngIf="title || subtitle">
     <h1 *ngIf="title">{{ title }}</h1>
     <p *ngIf="subtitle">{{ subtitle }}</p>
@@ -6,9 +14,11 @@
 
   <ng-content></ng-content>
 
-  <a *ngIf="buttonText && buttonLink"
-     [href]="buttonLink"
-     class="cta-button">
+  <a
+    *ngIf="buttonText && buttonLink"
+    [href]="buttonLink"
+    class="cta-button"
+  >
     {{ buttonText }}
   </a>
 </section>

@@ -2,9 +2,7 @@
   class="hero"
   [ngClass]="{ 'has-bg': backgroundImage }"
   [ngStyle]="{
-    '--hero-bg-image': backgroundImage
-      ? 'url(' + backgroundImage + ')'
-      : 'none'
+    '--hero-bg-image': backgroundImage ? 'url(' + backgroundImage + ')' : 'none'
   }"
 >
   <ng-container *ngIf="title || subtitle">
@@ -21,4 +19,20 @@
   >
     {{ buttonText }}
   </a>
+
+  <button
+    *ngIf="showTwitchToggleButton"
+    (click)="toggleTwitchPlayer()"
+    class="toggle-button"
+  >
+    {{ twitchVisible ? 'Stream verbergen' : 'Jetzt live zusehen!' }}
+  </button>
+
+  <div
+    class="twitch-container"
+    [class.expanded]="twitchVisible"
+    *ngIf="twitchVisible"
+  >
+    <app-twitch-player channel="rematchde"></app-twitch-player>
+  </div>
 </section>
